@@ -365,13 +365,8 @@ wire load_reu = ioctl_index == {2'd2, 6'd2};                           // OSD "l
 wire load_tap = ioctl_index == {2'd3, 6'd2};                           // OSD "load *.TAP"
 wire load_flt = ioctl_index[5:0] == 7;                                 // OSD "load Custom Filters"
 
-//assign LED[1] = bootrom;
-//assign LED[2] = load_drv;
-//assign LED[3] = ioctl_wr;
-//assign LED[4] = rom_loaded;
-//assign LED[5] = load_rom;
-//assign LED[6] = ~c128_n;
-//assign LED[7] = ~z80_n;
+assign LED = ioctl_wr;
+
 wire freeze;
 wire cfg_force64 = status[2];
 wire mode40col = ~status[1] | cfg_force64;
