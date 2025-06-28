@@ -1309,8 +1309,8 @@ wire       drive_iec_srq_n_i;
 wire       drive_iec_clk_o;
 wire       drive_iec_data_o;
 wire       drive_iec_srq_n_o;
-wire       drive_reset = ~reset_n | status[6] | drv_loading;
-//wire       drive_reset = ~reset_n | drv_loading;
+//wire       drive_reset = ~reset_n | status[6] | drv_loading;
+wire       drive_reset = ~reset_n | drv_loading;
 wire [1:0] drive_led;
 wire       disk_ready;
 
