@@ -3,9 +3,6 @@
 #==============================================================================
 
 # --- Base clocks ---
-# NOTE: top-level input clock port is CLOCK_27 (27 MHz), not CLK12M.
-# The previous SDC constrained a non-existent "CLK12M" port, leaving
-# CLOCK_27 (and everything derived from it) effectively unconstrained.
 create_clock -name {CLOCK_50} -period 37.037 [get_ports {CLOCK_50}]
 create_clock -name {SPI_SCK}  -period 41.666 [get_ports {SPI_SCK}]
 
