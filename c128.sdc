@@ -6,7 +6,7 @@
 # NOTE: top-level input clock port is CLOCK_27 (27 MHz), not CLK12M.
 # The previous SDC constrained a non-existent "CLK12M" port, leaving
 # CLOCK_27 (and everything derived from it) effectively unconstrained.
-create_clock -name {CLOCK_27} -period 37.037 [get_ports {CLOCK_27}]
+create_clock -name {CLOCK_50} -period 37.037 [get_ports {CLOCK_50}]
 create_clock -name {SPI_SCK}  -period 41.666 [get_ports {SPI_SCK}]
 
 # Automatically constrain PLL and other generated clocks
@@ -26,7 +26,7 @@ set sdram_clk  {pll|altpll_component|auto_generated|pll1|clk[0]}
 # --- Async clock groups ---
 set_clock_groups -asynchronous \
     -group [get_clocks {SPI_SCK}] \
-    -group [get_clocks {CLOCK_27}] \
+    -group [get_clocks {CLOCK_50}] \
     -group [get_clocks $sys_clk] \
     -group [get_clocks $sdram_clk]
 
